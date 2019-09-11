@@ -1,0 +1,9 @@
+node_modules
+internals
+.vscode
+build
+.git
+app/api
+dist
+scripts
+config
