@@ -21,8 +21,7 @@ const defaults = {
       <div
         style={{
           animation: 'show-no-data .3s',
-        }}
-      >
+        }}>
         No data
       </div>
     ),
