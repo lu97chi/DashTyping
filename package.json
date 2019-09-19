@@ -1,5 +1,5 @@
 {
-  "name": "auth-app-typescript",
+  "name": "example-app-typescript",
   "version": "0.1.0",
   "private": true,
   "peerDependencies": {
@@ -12,7 +12,6 @@
     "styled-components": "^4.3.2"
   },
   "dependencies": {
-    "@bit/woobydev.components.social-buttons": "^0.0.11",
     "@types/jest": "24.0.18",
     "@types/node": "12.7.5",
     "@types/react": "16.9.2",
@@ -29,7 +28,6 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "3.1.1",
-    "react-with-firebase-auth": "^1.0.4",
     "styled-components": "4.3.2",
     "typescript": "3.6.3"
   },

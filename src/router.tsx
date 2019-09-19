@@ -1,18 +1,18 @@
 // @flow
 import { createRouter } from 'react-garden-kit';
-import AuthApp from './auth-app';
-import AuthController from './AuthController';
-import { AuthParams } from './AuthParams';
+import ExampleApp from './example-app';
+import ExampleController from './ExampleController';
+import { ExampleParams } from './ExampleParams';
 
 export const MainRoute = createRouter([
   {
     path: '/',
     exact: true,
-    component: AuthApp,
+    component: ExampleApp,
     appConfig: {
-      appId: 'AUTH_APP',
-      controller: AuthController,
-      params: AuthParams,
+      appId: 'EXAMPLE_APP',
+      controller: ExampleController,
+      params: ExampleParams,
     },
   },
 ]);
