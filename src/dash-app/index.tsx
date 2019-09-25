@@ -13,6 +13,7 @@ function Index() {
       sidebar={sidebar}
       headerData={headerData}
       sidebarData={sidebarData}
+      theme={theme}
       >
         <div>fds</div>
     </Layout>

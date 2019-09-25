@@ -6,8 +6,8 @@ const fullHeight = '64px';
 
 type ContainerBase = {
     open?: boolean,
-    iconSize?: string,
-    iconColor?: string,
+    iconsize?: string,
+    iconcolor?: string,
     badgeColor?: string,
     borderColorBase?: string,
     boxshadowBase?: string
@@ -41,8 +41,8 @@ export const Card = styled.div<ContainerBase>`
 `;
 
 export const IconCustom = styled(Icon)<ContainerBase>`
-    font-size: ${({ iconSize }) => iconSize} !important;
-    color: ${({ iconColor }) => iconColor} !important;
+    font-size: ${({ iconsize }) => iconsize} !important;
+    color: ${({ iconcolor }) => iconcolor} !important;
     margin: auto;
 `;
 

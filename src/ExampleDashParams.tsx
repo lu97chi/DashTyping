@@ -28,16 +28,16 @@ export const HeaderData = {
       type: 'searcher',
       icon: 'search',
       col: 2,
-      iconSize: '18px',
-      iconColor: Theme.textColor,
+      iconsize: '18px',
+      iconcolor: Theme.textColor,
     },
     {
       type: 'tooltip',
       icon: 'user',
       text: 'Perfil',
       col: 2,
-      iconSize: '18px',
-      iconColor: Theme.textColor,
+      iconsize: '18px',
+      iconcolor: Theme.textColor,
     },
     {
       type: 'notification',
@@ -45,8 +45,8 @@ export const HeaderData = {
       badgeBackground: Theme.primaryColor,
       badgeColor: Theme.primaryColor,
       badgeOffset: [8, -8],
-      iconSize: '18px',
-      iconColor: Theme.textColor,
+      iconsize: '18px',
+      iconcolor: Theme.textColor,
       notificationData: [
         {
           type: 'text',
@@ -79,16 +79,16 @@ export const HeaderData = {
       icon: 'user',
       text: 'Perfil',
       col: 2,
-      iconSize: '18px',
-      iconColor: Theme.textColor,
+      iconsize: '18px',
+      iconcolor: Theme.textColor,
     },
     {
       type: 'profile',
       icon: 'default',
       text: 'Luis hernandez',
       col: 4,
-      iconSize: '18px',
-      iconColor: Theme.textColor,
+      iconsize: '18px',
+      iconcolor: Theme.textColor,
       nested: [
         {
           text: 'Perfil',
@@ -122,14 +122,14 @@ export const SidebarData = {
       name: 'Perfil',
       route: 'perfil2',
       icon: 'user',
-      iconSize: '18px',
-      fontSize: '18px',
+      iconsize: '18px',
+      fontsize: '18px',
     },
     {
       name: 'Usuario',
       icon: 'search',
-      iconSize: '18px',
-      fontSize: '18px',
+      iconsize: '18px',
+      fontsize: '18px',
       nested: [
         {
           name: 'Algun nombre425',
@@ -147,8 +147,8 @@ export const SidebarData = {
       name: 'CRUD',
       route: 'GCrud',
       icon: 'user',
-      iconSize: '18px',
-      fontSize: '18px',
+      iconsize: '18px',
+      fontsize: '18px',
     },
   ],
 };

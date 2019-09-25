@@ -5,20 +5,23 @@ import { Row } from 'antd';
 import Sidebar from '../Sidebar';
 import Header from '../Header';
 import { useLayout } from './hooks';
+import { OptionsType, SidebarDataType, HeaderDataType, themeType } from '../../app.params';
 
 type Props = {
     children?: any,
-    header: Boolean,
-    sidebar: Boolean,
-    headerData?: any,
-    sidebarData: {menu: any, logoConfig: any}
+    header: boolean,
+    sidebar: boolean,
+    headerData: HeaderDataType,
+    sidebarData: SidebarDataType,
+    theme: themeType
    };
 
 const Dash = ({
-    children, headerData, header, sidebar, sidebarData,
+    children, headerData, header, sidebar, sidebarData, theme
   }: Props) => {
     const { openSidebar, setOpenSidebar } = useLayout();
     const { menu, logoConfig } = sidebarData;
+    const { options } = headerData;
     return (
       <div style={{ height: '100%', background: '#F0F2F5' }}>
         <div style={{ height: '100%', display: 'flex' }}>
@@ -27,12 +30,14 @@ const Dash = ({
               open={openSidebar}
               menu={menu}
               logoConfig={logoConfig}
+              theme={theme}
             />
           ) : null}
           <div style={{ width: '100%' }}>
             {header ? (
               <Header
-                options={headerData.options}
+                theme={theme}
+                options={options}
                 open={openSidebar}
                 setOpenSidebar={() => setOpenSidebar(!openSidebar)}
               />

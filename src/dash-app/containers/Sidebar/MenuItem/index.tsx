@@ -5,15 +5,24 @@ import {
   MenuItemContainer, TextContainer, IconA, NestedContainer,
 } from './styledComponents';
 import { showPoper, showNested } from './helpers';
+import { MenuType, themeType } from '../../../app.params';
 
-type Props = { open: boolean, menu: any};
+type Props = { open: boolean, menu: MenuType, theme: themeType};
 
-const MenuItem = ({ open, menu }: Props) => {
-  const { nested, iconSize } = menu;
+const MenuItem = ({ open, menu, theme }: Props) => {
+  const { nested, iconsize = '' } = menu;
   const [nestedOpen, setNestedOpen] = useState(false);
+  const {
+    textColorLight,
+    textColorLightHover
+  } = theme;
+  debugger;
   return (
     <div>
-      <MenuItemContainer onClick={() => (nested ? setNestedOpen(!nestedOpen) : null)}>
+      <MenuItemContainer
+      textColorLightHover={textColorLightHover}
+      textColorLight={textColorLight}
+       onClick={() => (nested ? setNestedOpen(!nestedOpen) : null)}>
         <TextContainer>
           {showPoper(open, menu)}
         </TextContainer>
@@ -32,7 +41,7 @@ const MenuItem = ({ open, menu }: Props) => {
       {
       open && nested ? (
         <NestedContainer>
-          {showNested(nested, nestedOpen, iconSize)}
+          {showNested(nested, nestedOpen, iconsize)}
         </NestedContainer>
       ) : null
     }

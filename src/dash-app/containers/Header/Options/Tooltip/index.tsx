@@ -13,13 +13,13 @@ const ToolTip = ({
   const {
     text,
     icon,
-    iconSize,
-    iconColor,
+    iconsize,
+    iconcolor,
   } = option;
   return (
     <Tooltip placement="bottom" title={text}>
       <MenuItem onClick={() => handleClick(option)}>
-        <IconCustom iconSize={iconSize} iconColor={iconColor} type={icon} />
+        <IconCustom iconsize={iconsize} iconcolor={iconcolor} type={icon} />
       </MenuItem>
     </Tooltip>
   );

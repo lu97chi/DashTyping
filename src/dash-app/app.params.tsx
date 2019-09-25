@@ -4,25 +4,29 @@ type layoutConfigType = {
 }
 
 type layoutDataType = {
-    headerData: Array<OptionsType>,
+    headerData: HeaderDataType,
     sidebarData: SidebarDataType,
 }
 
-type SidebarDataType = {
+export type HeaderDataType = {
+    options: Array<OptionsType>
+}
+
+export type SidebarDataType = {
     logoConfig: LogoConfigType,
     menu: Array<MenuType>
 }
 
-type MenuType = {
+export type MenuType = {
     name: string,
     route: string,
     icon: string,
-    iconSize: string,
-    fontSize: string,
+    iconsize?: string,
+    fontsize?: string,
     nested?: Array<MenuNestedType>
 }
 
-type LogoConfigType = {
+export type LogoConfigType = {
     withText: boolean,
     logoText?: string,
     logoImg: string // reference to image
@@ -34,7 +38,7 @@ type NotificationType = {
     text: string
 }
 
-type MenuNestedType = {
+export type MenuNestedType = {
     name: string,
     icon: string,
     route: string
@@ -51,8 +55,8 @@ export type OptionsType = {
     type: "searcher" | "tooltip" | "notification" | "profile" | string,
     icon: string, // refer to https://ant.design/components/icon/
     col: number,
-    iconSize: string,
-    iconColor: string,
+    iconsize: string,
+    iconcolor: string,
     badgeBackground?: string,
     badgeColor?: string,
     badgeOffset?: Array<number>,
@@ -61,7 +65,7 @@ export type OptionsType = {
     text?: string
 }
 
-type themeType = {
+export type themeType = {
     primaryColor: string, // primary color for all components
   linkColor: string, // link color
   successColor: string, // success state color

@@ -1,8 +1,9 @@
 import React from 'react';
 import SubMenu from 'antd/lib/menu/SubMenu';
 import { Icon, Menu } from 'antd';
+import { MenuType } from '../../app.params';
 
-const mapItems = (item:any) => {
+const mapItems = (item:MenuType) => {
   const { nested, name } = item;
   if (nested) {
     return (
@@ -12,7 +13,7 @@ const mapItems = (item:any) => {
           <span>{name}</span>
       }
       >
-        {item.nested.map((innerItem: any) => mapItems(innerItem))}
+        {nested.map((innerItem) => mapItems(innerItem))}
       </SubMenu>
     );
   }
@@ -23,13 +24,13 @@ const mapItems = (item:any) => {
   );
 };
 
-export const getMenuItem = (item: { nested?: any; name?: any; icon?: any; route?: any; }) => {
+export const getMenuItem = (item: MenuType) => {
   const { nested, name, icon } = item;
   if (nested) {
     return (
       <SubMenu
         style={{ marginLeft: 'auto' }}
-        key={name}
+        key={`${name}-${icon}`}
         title={(
           <span>
             <Icon type={icon} />
