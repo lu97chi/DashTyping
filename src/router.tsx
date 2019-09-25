@@ -2,18 +2,31 @@
 import { createRouter } from 'react-garden-kit';
 import ExampleController from './ExampleController';
 import { ExampleParams } from './ExampleParams';
+import { DashParams} from './ExampleDashParams';
 
-import CrudApp from './crud-app';
+
+// import CrudApp from './crud-app';
+import DashApp from './dash-app';
 
 export const MainRoute = createRouter([
+  // {
+  //   path: '/crud',
+  //   exact: true,
+  //   component: CrudApp,
+  //   appConfig: {
+  //     appId: 'CRUD_APP',
+  //     controller: ExampleController,
+  //     params: ExampleParams
+  //   }
+  // },
   {
-    path: '/crud',
+    path: '/dash',
     exact: true,
-    component: CrudApp,
+    component: DashApp,
     appConfig: {
-      appId: 'CRUD_APP',
+      appId: 'DASH_APP',
+      params: DashParams,
       controller: ExampleController,
-      params: ExampleParams
     }
   }
 ]);

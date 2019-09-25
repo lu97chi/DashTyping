@@ -21,7 +21,6 @@ const GCrud = () => {
   const {
     domain, title, filterProp, enableFilter 
   } = intialConfig;
-  debugger;
   const [stateData, setStateData] = useState(data);
   return (
     <GCrudWrapper>
