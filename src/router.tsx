@@ -1,18 +1,19 @@
 // @flow
 import { createRouter } from 'react-garden-kit';
-import ExampleApp from './example-app';
 import ExampleController from './ExampleController';
 import { ExampleParams } from './ExampleParams';
 
+import CrudApp from './crud-app';
+
 export const MainRoute = createRouter([
   {
-    path: '/',
+    path: '/crud',
     exact: true,
-    component: ExampleApp,
+    component: CrudApp,
     appConfig: {
-      appId: 'EXAMPLE_APP',
+      appId: 'CRUD_APP',
       controller: ExampleController,
-      params: ExampleParams,
-    },
-  },
+      params: ExampleParams
+    }
+  }
 ]);
