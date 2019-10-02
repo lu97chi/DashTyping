@@ -5,7 +5,7 @@ import Layout from './containers/Layout';
 
 function Index() {
     const { params } = useAppConfig();
-    const { layoutConfig, layoutData, propRouter, theme} = params as AppParams;
+    const { layoutConfig, layoutData, PropRouter, theme} = params as AppParams;
     const { header, sidebar } = layoutConfig;
     const { headerData, sidebarData} = layoutData;
     return <Layout
@@ -15,7 +15,7 @@ function Index() {
       sidebarData={sidebarData}
       theme={theme}
       >
-        <div>fds</div>
+        <PropRouter />
     </Layout>
 }
 

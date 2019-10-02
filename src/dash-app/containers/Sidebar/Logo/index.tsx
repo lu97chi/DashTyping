@@ -7,11 +7,12 @@ import { LogoConfigType } from '../../../app.params';
 type Props = { logo: LogoConfigType, open: boolean };
 
 const Logo = ({ logo, open }: Props) => {
-  const { withText, logoText, logoImg } = logo;
+  const { withText, logoText, logoImg, logoHeigth, logoWidth, logoTextConfig } = logo;
   return (
     <LogoContainer>
-      <LogoImage src={logoImg} />
-      { open && withText ? <LogoText>{logoText}</LogoText> : null}
+      <LogoImage src={logoImg} logowidth={logoWidth} logoheigth={logoHeigth} />
+      { open && withText ? <LogoText style={logoTextConfig}>{logoText}</LogoText> : null}
+      {/* <LogoText isOpen={open && withText}>{logoText}</LogoText> */}
     </LogoContainer>
   );
 };

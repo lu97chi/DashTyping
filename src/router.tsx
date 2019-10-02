@@ -2,8 +2,9 @@
 import { createRouter } from 'react-garden-kit';
 import ExampleController from './ExampleController';
 import { ExampleParams } from './ExampleParams';
+import { LandingParams } from './ExampleLandingParams';
 import { DashParams} from './ExampleDashParams';
-
+import Landing from './landing-app';
 
 // import CrudApp from './crud-app';
 import DashApp from './dash-app';
@@ -19,14 +20,24 @@ export const MainRoute = createRouter([
   //     params: ExampleParams
   //   }
   // },
+  // {
+  //   path: '/dash',
+  //   exact: true,
+  //   component: DashApp,
+  //   appConfig: {
+  //     appId: 'DASH_APP',
+  //     params: DashParams,
+  //     controller: ExampleController,
+  //   }
+  // }
   {
-    path: '/dash',
+    path: '/landing',
     exact: true,
-    component: DashApp,
+    component: Landing,
     appConfig: {
-      appId: 'DASH_APP',
-      params: DashParams,
-      controller: ExampleController,
+      appId: 'LANDING_APP',
+      params: LandingParams,
+      controller: ExampleController
     }
   }
 ]);

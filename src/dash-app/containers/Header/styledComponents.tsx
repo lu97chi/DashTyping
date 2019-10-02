@@ -10,7 +10,8 @@ type ContainerBase = {
     iconcolor?: string,
     badgeColor?: string,
     borderColorBase?: string,
-    boxshadowBase?: string
+    boxshadowBase?: string,
+    fullheigth?: string,
 }
 
 export const IconA:ComponentType<any> = styled(Icon)<ContainerBase>`
@@ -34,7 +35,7 @@ export const MenuItem = styled.div<ContainerBase>`
 `;
 
 export const Card = styled.div<ContainerBase>`
-    height: ${fullHeight};
+    height: ${({fullheigth}) => fullheigth};
     background: #ffffff;
     box-shadow: ${({boxshadowBase}) => boxshadowBase};
     z-index: 5;

@@ -37,6 +37,7 @@ const Dash = ({
             {header ? (
               <Header
                 theme={theme}
+                headerConfig={headerData}
                 options={options}
                 open={openSidebar}
                 setOpenSidebar={() => setOpenSidebar(!openSidebar)}

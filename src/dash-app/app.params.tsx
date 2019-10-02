@@ -9,7 +9,8 @@ type layoutDataType = {
 }
 
 export type HeaderDataType = {
-    options: Array<OptionsType>
+    options: Array<OptionsType>,
+    fullHeigth?: string,
 }
 
 export type SidebarDataType = {
@@ -19,23 +20,31 @@ export type SidebarDataType = {
 
 export type MenuType = {
     name: string,
-    route: string,
+    route?: string,
     icon: string,
     iconsize?: string,
     fontsize?: string,
+    iconcolor?: string,
     nested?: Array<MenuNestedType>
 }
 
 export type LogoConfigType = {
     withText: boolean,
     logoText?: string,
+    logoTextConfig?: any,
     logoImg: string // reference to image
+    logoWidth: string,
+    logoHeigth: string,
 }
 
 type NotificationType = {
     type: string,
     divider? : boolean,
-    text: string
+    text: string,
+    delay?: string,
+    iconBackground?: string,
+    icon?: string,
+    isUser?: boolean
 }
 
 export type MenuNestedType = {
@@ -48,19 +57,19 @@ export type NestedType = {
     text: string,
     route? : string,
     icon: string,
-    divider?: string
+    divider?: boolean
 }
 
 export type OptionsType = {
     type: "searcher" | "tooltip" | "notification" | "profile" | string,
     icon: string, // refer to https://ant.design/components/icon/
-    col: number,
+    col?: number,
     iconsize: string,
     iconcolor: string,
     badgeBackground?: string,
     badgeColor?: string,
     badgeOffset?: Array<number>,
-    notificationData: Array<NotificationType>,
+    notificationData?: Array<NotificationType>,
     nested?: Array<NestedType>,
     text?: string
 }
@@ -91,7 +100,7 @@ export type AppParams = {
     layoutData: layoutDataType,
     layoutConfig: layoutConfigType,
     theme: themeType,
-    propRouter:any
+    PropRouter:any // router type
 };
 
 

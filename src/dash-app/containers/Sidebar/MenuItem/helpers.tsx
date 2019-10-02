@@ -8,11 +8,11 @@ export const showNested = (elements:Array<MenuNestedType>, open:boolean, iconsiz
     <SlideOpen item={item} paddingleft={iconsize} open={open} />));
   
 export const showPoper = (open:boolean, menu:MenuType) => {
-    const { fontsize, iconsize } = menu;
+    const { fontsize, iconsize, name, icon } = menu;
     return (
       <>
-        <Icon type="search" style={{ fontSize: iconsize }} />
-        { open ? <AText fontsize={fontsize} open={open}>boton</AText> : null}
+        <Icon type={icon} style={{ fontSize: iconsize }} />
+        { open ? <AText fontsize={fontsize} open={open}>{name}</AText> : null}
       </>
     );
   };

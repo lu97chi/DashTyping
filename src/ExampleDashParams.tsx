@@ -1,3 +1,7 @@
+import { AppParams } from "./dash-app";
+import {Router} from './exampleRouter';
+import Logo from './null.png';
+
 // import Logo from '../../resources/images/null.png';
 // each propertie is a type
 export const Theme = {
@@ -23,12 +27,13 @@ export const Theme = {
 };
 
 export const HeaderData = {
+  fullHeigth: '64px',
   options: [
     {
       type: 'searcher',
       icon: 'search',
       col: 2,
-      iconsize: '18px',
+      iconsize: '16px',
       iconcolor: Theme.textColor,
     },
     {
@@ -36,7 +41,7 @@ export const HeaderData = {
       icon: 'user',
       text: 'Perfil',
       col: 2,
-      iconsize: '18px',
+      iconsize: '16px',
       iconcolor: Theme.textColor,
     },
     {
@@ -45,7 +50,7 @@ export const HeaderData = {
       badgeBackground: Theme.primaryColor,
       badgeColor: Theme.primaryColor,
       badgeOffset: [8, -8],
-      iconsize: '18px',
+      iconsize: '16px',
       iconcolor: Theme.textColor,
       notificationData: [
         {
@@ -79,7 +84,7 @@ export const HeaderData = {
       icon: 'user',
       text: 'Perfil',
       col: 2,
-      iconsize: '18px',
+      iconsize: '16px',
       iconcolor: Theme.textColor,
     },
     {
@@ -87,7 +92,7 @@ export const HeaderData = {
       icon: 'default',
       text: 'Luis hernandez',
       col: 4,
-      iconsize: '18px',
+      iconsize: '16px',
       iconcolor: Theme.textColor,
       nested: [
         {
@@ -113,23 +118,32 @@ export const HeaderData = {
 
 export const SidebarData = {
   logoConfig: {
-    withText: false,
-    logoText: 'Texto',
-    logoImg: 'https://www.crearlogogratisonline.com/images/crearlogogratis_1024x1024_01.png',
+    withText: true,
+    logoText: 'Woobydev',
+    logoTextConfig: {
+      color: 'red',
+      backGround: 'orange',
+      fontSize: '18px'
+    },
+    logoImg: Logo,
+    logoWidth: '64px',
+    logoHeigth: '64px',
   },
   menu: [
     {
       name: 'Perfil',
       route: 'perfil2',
       icon: 'user',
-      iconsize: '18px',
-      fontsize: '18px',
+      iconsize: '16px',
+      fontsize: '16px',
+      iconcolor: '#A6ADB4',
     },
     {
       name: 'Usuario',
       icon: 'search',
-      iconsize: '18px',
-      fontsize: '18px',
+      iconsize: '16px',
+      fontsize: '16px',
+      iconcolor: '#A6ADB4',
       nested: [
         {
           name: 'Algun nombre425',
@@ -147,14 +161,19 @@ export const SidebarData = {
       name: 'CRUD',
       route: 'GCrud',
       icon: 'user',
-      iconsize: '18px',
-      fontsize: '18px',
+      iconsize: '16px',
+      fontsize: '16px',
+      iconcolor: '#A6ADB4',
     },
   ],
 };
 
-export const DashParams = {
+export const DashParams: AppParams = {
     layoutConfig:{ header: true, sidebar: true}, 
-    layoutData: { headerData: HeaderData, sidebarData: SidebarData}, 
-    theme:Theme
+    layoutData: { 
+      headerData: HeaderData,
+      sidebarData: SidebarData
+    }, 
+    theme:Theme,
+    PropRouter:Router
 }

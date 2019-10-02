@@ -16,7 +16,6 @@ const MenuItem = ({ open, menu, theme }: Props) => {
     textColorLight,
     textColorLightHover
   } = theme;
-  debugger;
   return (
     <div>
       <MenuItemContainer
