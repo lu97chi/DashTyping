@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { TestimonialContainer, TestimonialCard, TestimonialText, PersonContainer, PersonImage, DataContainer, ShowMore } from './styledComponents';
+import { TestimonialContainer, TestimonialCard, TestimonialText, PersonContainer, PersonImage, DataContainer, ShowMore, QuoteDefinition, Name, Direction } from './styledComponents';
 import Quote from '../../assets/Quote'
-import { Icon, Modal } from 'antd';
+import { Modal } from 'antd';
+import ModalTestimonial from './ModalTestimonial';
 
 type Props = {
     quote: string,
@@ -22,6 +23,7 @@ const Testimonial = ({ quote, image, personInformation}:Props ) => {
     <TestimonialCard>
         <Quote fill={'#595959'} />
         <Quote fill={'#595959'} />
+        <QuoteDefinition>Best day ever</QuoteDefinition>
         <TestimonialText>{quote.length > 180 ? 
             <p>{trunkText(quote)} <ShowMore onClick={() => setModalOpen(true)}>ver mas...</ShowMore></p> : quote}
         </TestimonialText>
@@ -29,16 +31,17 @@ const Testimonial = ({ quote, image, personInformation}:Props ) => {
     <PersonContainer>
         <PersonImage src={image} />
         <DataContainer>
-            <p>{personInformation.name}</p>
-            <p>{personInformation.name}</p>
-            <Icon type="twitter" />
+            <Name>{personInformation.name}</Name>
+            <Direction>{personInformation.name}Mas la direccion</Direction>
         </DataContainer>
     </PersonContainer>
     <Modal
           visible={modalOpen}
           onOk={() => setModalOpen(false)}
           onCancel={() => setModalOpen(false)}
-        ></Modal>
+    >
+        <ModalTestimonial quote={quote} personInformation={personInformation} image={image} />
+        </Modal>
 </TestimonialContainer>
     )
 }

@@ -4,7 +4,18 @@ export const TestimonialContainer = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
+    transition: .3s ease all;
+    &:hover{
+        transform: translateY(-5px);    
+    }
 `;
+
+export const TestimonialContainerM = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+`;
+
 
 export const TestimonialCard = styled.div`
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
@@ -15,7 +26,7 @@ export const TestimonialCard = styled.div`
 `;
 
 export const TestimonialText = styled.p`
-    font-size: 18px;
+    font-size: 16px;
     color: #595959;
     padding: 4px 16px;
 `;
@@ -44,6 +55,23 @@ export const DataContainer = styled.div`
 export const ShowMore = styled.span`
     cursor: pointer;
     color: blue;
+`;
+
+export const QuoteDefinition = styled.h3`
+
+`;
+
+export const Name = styled.p`
+    color: #525252;
+    font-size: 20px;
+`;
+
+export const Direction = styled.p`
+    color: #6c6c6c;
+`;
+
+export const TextContainer = styled.div`
+    margin-top: 12px;
 `;
 
 // boxshadowBase: '0 2px 8px rgba(0, 0, 0, 0.15)', // major shadow for layers

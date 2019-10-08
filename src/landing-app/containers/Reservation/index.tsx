@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Modal, TimePicker, Select, Checkbox, Input, Button } from 'antd';
-import Caller from '../Caller';
+import Caller from '../CTA';
 import moment from 'moment';
 
 const { Option, OptGroup } = Select;

@@ -7,6 +7,23 @@ import PackageCard from './bitComponents/PackageCard';
 import { Row, Col } from 'antd';
 import TransitionCarrousel from './bitComponents/TransitionCarousel';
 import Testimonial from './bitComponents/Testimonial';
+import Navbar from './containers/Navbar';
+import DividingContent from './bitComponents/DividingContent';
+
+const DividerItems = [
+    {
+        text: 'Servicios dentales y tratamientos de la piel',
+        icon: 'search'
+    },
+    {
+        text: 'Servicios dentales y tratamientos de la piel',
+        icon: 'search'
+    },
+    {
+        text: 'Servicios dentales y tratamientos de la piel',
+        icon: 'search'
+    }
+]
 
 const Items = [
     {
@@ -60,34 +77,44 @@ const Landing = () => {
         theme
     } = params as AppParams;
     console.log(sections, theme);
-    return <div>
-        <Row type="flex" align="middle">
-            {Items.map(({elements, mainTitle, top}, i)=> <Col xs={24} md={6}>
-                <PackageCard
-                    mainTitle={mainTitle}
-                    top={top}
-                    elements={elements}
-                    />
-            </Col>)}
-        </Row>
-        <Row>
-            <TransitionCarrousel />
-        </Row>
-        <Row>
-            {testiomonials.map(({personInformation, image, quote}) => <Col md={6}>
-                <Testimonial personInformation={personInformation} quote={quote} image={image} />
-            </Col>)}
-        </Row>
-        {/* {
-            sections.map((section) => GetSelector(section))
-        } */}        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita natus, suscipit nostrum sed odit aperiam culpa nulla! Eaque ipsa quos accusamus doloribus error cumque amet expedita harum rerum. Ea, itaque.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita natus, suscipit nostrum sed odit aperiam culpa nulla! Eaque ipsa quos accusamus doloribus error cumque amet expedita harum rerum. Ea, itaque.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita natus, suscipit nostrum sed odit aperiam culpa nulla! Eaque ipsa quos accusamus doloribus error cumque amet expedita harum rerum. Ea, itaque.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita natus, suscipit nostrum sed odit aperiam culpa nulla! Eaque ipsa quos accusamus doloribus error cumque amet expedita harum rerum. Ea, itaque.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita natus, suscipit nostrum sed odit aperiam culpa nulla! Eaque ipsa quos accusamus doloribus error cumque amet expedita harum rerum. Ea, itaque.</p>
+    return <Row>
+    {
+        sections.map((section) => GetSelector(section))
+    } 
+</Row>
+    // <div>
+    //     <Navbar />
+    //     <Row type="flex" align="middle">
+    //         {Items.map(({elements, mainTitle, top}, i)=> <Col xs={24} md={6}>
+    //             <PackageCard
+    //                 mainTitle={mainTitle}
+    //                 top={top}
+    //                 elements={elements}
+    //                 />
+    //         </Col>)}
+    //     </Row>
+    //     <Row>
+    //         <TransitionCarrousel />
+    //     </Row>
+    //     <Row>
+    //         {testiomonials.map(({personInformation, image, quote}) => <Col md={6}>
+    //             <Testimonial personInformation={personInformation} quote={quote} image={image} />
+    //         </Col>)}
+    //     </Row>
+        // <Row>
+        //     <DividingContent items={DividerItems} />
+        // </Row>
+    //     {/* {
+    //         sections.map((section) => GetSelector(section))
+    //     } */}        
+    //     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita natus, suscipit nostrum sed odit aperiam culpa nulla! Eaque ipsa quos accusamus doloribus error cumque amet expedita harum rerum. Ea, itaque.</p>
+    //     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita natus, suscipit nostrum sed odit aperiam culpa nulla! Eaque ipsa quos accusamus doloribus error cumque amet expedita harum rerum. Ea, itaque.</p>
+    //     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita natus, suscipit nostrum sed odit aperiam culpa nulla! Eaque ipsa quos accusamus doloribus error cumque amet expedita harum rerum. Ea, itaque.</p>
+    //     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita natus, suscipit nostrum sed odit aperiam culpa nulla! Eaque ipsa quos accusamus doloribus error cumque amet expedita harum rerum. Ea, itaque.</p>
+    //     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita natus, suscipit nostrum sed odit aperiam culpa nulla! Eaque ipsa quos accusamus doloribus error cumque amet expedita harum rerum. Ea, itaque.</p>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita natus, suscipit nostrum sed odit aperiam culpa nulla! Eaque ipsa quos accusamus doloribus error cumque amet expedita harum rerum. Ea, itaque.</p>
-    </div>
+    //     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita natus, suscipit nostrum sed odit aperiam culpa nulla! Eaque ipsa quos accusamus doloribus error cumque amet expedita harum rerum. Ea, itaque.</p>
+    // </div>
 }
 
 export default component(Landing);

@@ -9,6 +9,7 @@ export type ThemeType = {
 
 export type SectionType = {
     type: "navbar" | "undefined",
+    configuration?: any
 }
 
 export type AppParams = {
