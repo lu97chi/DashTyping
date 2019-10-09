@@ -78,10 +78,10 @@ const Landing = () => {
     } = params as AppParams;
     console.log(sections, theme);
     return <Row>
-    {
-        sections.map((section) => GetSelector(section))
-    } 
-</Row>
+        {
+            sections.map((section) => GetSelector(section))
+        } 
+    </Row>
     // <div>
     //     <Navbar />
     //     <Row type="flex" align="middle">

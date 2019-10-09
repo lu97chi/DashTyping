@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, TimePicker } from 'antd';
+import { Calendar } from 'antd';
 import moment from 'moment';
 import { HeaderRender } from './helpers';
 

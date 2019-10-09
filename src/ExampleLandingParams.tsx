@@ -2,6 +2,7 @@ import { SectionType } from "./landing-app/app.params";
 import Logo from './landing-app/assets/Mediplasma 1.png';
 import LogoMD from './landing-app/assets/MediplasmaMD.png';
 
+const functionA = (data) => console.log('func A', data);
 
 const sections: Array<SectionType> = [
     {
@@ -19,11 +20,40 @@ const sections: Array<SectionType> = [
                logoPosition: 1
            },
            actionsConfiguration: {
-               actions: ['Citas'],
+            //    externalAction, define the action to call inside the caller
+            //    !externalAction, define an id, then create a switch for each case, sample:
+            //    --Funciton switch--
+            //     function A(id) {
+            //         switch (id) {
+            //                 case 'Citas2':
+            //                         console.log('cita 2')
+            //                         break;
+            //                 default:
+            //                         break;
+            //         }
+            // }
+            //     --Function call
+            // <CTAButton onClick={() => action.caller(() => A(action.id))} >{action.label}</CTAButton>
+               actions: [
+                //    {
+                //        label: 'Citas',
+                //        externalAction: true,
+                //        caller: (data) => functionA(data) 
+                //    },
+                   {
+                    label: 'Citas',
+                    externalAction: false,
+                    caller: (func) => func(),
+                    id: 'Citas' 
+                }
+               ],
                actionsPosition: 2,
            }
         }
     },
+    {
+        type: "hero",
+    }
 ];
 
 const theme = {
