@@ -1,7 +1,6 @@
 import React from 'react';
-import { DividerContainer, IconContainer } from './styledComponents';
-import { Row, Col, Icon } from 'antd';
-import { component } from 'react-garden-kit';
+import { IconContainer, Line, IconContainerLines, IconText } from './styledComponents';
+import { Col, Icon } from 'antd';
 
 type Props = {
     items: Array<{
@@ -10,13 +9,17 @@ type Props = {
     }>,
 }
 
-const DividingContent = ({items}: Props) => <DividerContainer>
-    {items.map((item) => <Col xs={22} md={8}>
+const DividingContent = ({items}: Props) => <div>
+    {items.map((item) => <Col xs={18} sm={10} md={8}>
       <IconContainer>
-        <Icon type="search" />
-        <p>{item.text}</p>    
+        <IconContainerLines>
+          <Line />
+          <Icon component={item.icon} />
+          <Line />
+        </IconContainerLines>
+        <IconText>{item.text}</IconText>    
       </IconContainer>  
     </Col>)}
-</DividerContainer>;
+</div>;
 
-export default component(DividingContent);
+export default DividingContent;

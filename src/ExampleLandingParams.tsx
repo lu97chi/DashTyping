@@ -1,6 +1,10 @@
+import React from 'react';
 import { SectionType } from "./landing-app/app.params";
 import Logo from './landing-app/assets/Mediplasma 1.png';
 import LogoMD from './landing-app/assets/MediplasmaMD.png';
+import Leaf from './landing-app/assets/Lief';
+import Persons from './landing-app/assets/Persons';
+import Tooth from './landing-app/assets/Tooth';
 
 const functionA = (data) => console.log('func A', data);
 
@@ -53,6 +57,29 @@ const sections: Array<SectionType> = [
     },
     {
         type: "hero",
+        configuration: {
+            mainText: 'Cuidado de tu piel',
+            secondaryText: 'Medicina estética y cosmética clínica'
+        }
+    },
+    {
+        type: "dividingContent",
+        configuration: {
+            items: [
+                {
+                    text: 'Servicios dentales y tratamientos de la piel',
+                    icon: Tooth
+                },
+                {
+                    text: 'Equipo y personal ampliamente capacitado',
+                    icon: Persons
+                },
+                {
+                    text: 'Productos completamente naturales',
+                    icon: Leaf
+                }
+            ]
+        }
     }
 ];
 
