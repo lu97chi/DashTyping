@@ -1,7 +1,12 @@
 import React, { useState } from 'react'
-import { Carrousel } from './styledComponents';
-import { Button } from 'antd';
+import { Carrousel, CarrouselContainer, CarouselText, CarouselTitle, IconArrow } from './styledComponents';
 
+type Props = {
+    items: Array<{
+        title: string,
+        text: string
+    }>
+}
 const texts = ['12341234', '43214124','4321432151231']
 
 const handleClick = (setTransition, setActive, active) => {
@@ -9,16 +14,20 @@ const handleClick = (setTransition, setActive, active) => {
     setActive(active + 1);
 }
 
-const TransitionCarrousel = () => {
+const TransitionCarrousel = ({ items }:Props) => {
     const [ onTransition, setOnTransition ] = useState(false);
     const [ active, setActive ] = useState(0);
     return (
-        <div style={{marginLeft: '250px'}}>
+        <>
+        <CarrouselContainer>
             <Carrousel animation={onTransition} onAnimationEnd={() => setOnTransition(false)}>
-                {texts[active]}
+                <CarouselTitle>{items[active].title}</CarouselTitle>
+                <CarouselText>{items[active].text}</CarouselText>
             </Carrousel>
-            <Button onClick={() => handleClick(setOnTransition, setActive, active)}>Cicl</Button>
-        </div>
+            <IconArrow type="right" onClick={() => handleClick(setOnTransition, setActive, active)} />
+        </CarrouselContainer>
+        <div>s</div>
+        </>
     )
 };
 

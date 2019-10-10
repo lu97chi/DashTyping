@@ -8,7 +8,7 @@ export type ThemeType = {
 }
 
 export type SectionType = {
-    type: "navbar" | "hero" | "dividingContent" | "undefined",
+    type: "navbar" | "hero" | "dividingContent" | "benefits" | "undefined",
     configuration?: any
 }
 

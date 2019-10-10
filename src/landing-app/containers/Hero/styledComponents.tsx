@@ -4,7 +4,6 @@ import { device } from '../../sizes';
 export const HeroMainText = styled.p`
     margin-bottom: 14px;
     font-size: 32px;
-    color: orange;
     @media ${device.mobileL} {
         font-size: 48px;
     }
@@ -15,7 +14,6 @@ export const HeroMainText = styled.p`
 
 export const HeroSecondaryText = styled.p`
     font-size: 16px;
-    color: orange;
     @media ${device.mobileL} {
         font-size: 24px;
     }

@@ -3,6 +3,7 @@ import { SectionType } from './app.params';
 import Navbar from './containers/Navbar';
 import Hero from './containers/Hero';
 import DividingContent from './containers/DividingContent';
+import Benefits from './containers/Benefits';
 export const GetSelector = (selector: SectionType) => {
     const {
         type,
@@ -15,6 +16,8 @@ export const GetSelector = (selector: SectionType) => {
             return <Hero configuration={configuration} />
         case 'dividingContent':
             return <DividingContent configuration={configuration} />
+        case 'benefits':
+            return <Benefits configuration={configuration} />
         default:
             return <div>default</div>
     }

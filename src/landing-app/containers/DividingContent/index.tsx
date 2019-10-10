@@ -1,6 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'antd';
 import DividingComponent from '../../../BitsComponents/DividingContent';
+import { DividingContainer } from './styledComponents';
 type Props = {
     configuration: {
         items: Array<{
@@ -10,10 +11,10 @@ type Props = {
     } // change to props
 }
 
-const DividingContent = ({configuration} : Props) => <div>
+const DividingContent = ({configuration} : Props) => <DividingContainer>
        <Row>
                 <DividingComponent items={configuration.items} />
        </Row>
-    </div>;
+    </DividingContainer>;
 
 export default DividingContent;

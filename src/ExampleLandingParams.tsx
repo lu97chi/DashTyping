@@ -68,15 +68,60 @@ const sections: Array<SectionType> = [
             items: [
                 {
                     text: 'Servicios dentales y tratamientos de la piel',
-                    icon: Tooth
+                    icon: Leaf
                 },
                 {
                     text: 'Equipo y personal ampliamente capacitado',
-                    icon: Persons
+                    icon: Leaf
                 },
                 {
                     text: 'Productos completamente naturales',
                     icon: Leaf
+                }
+            ]
+        }
+    },
+    {
+        type: "benefits",
+        configuration: {
+            carouselItems: [
+                {
+                    title: 'Plasma rico en plaquetas',
+                    text: 'Es un tratamiento autológico ya que es del mismo paciente de donde se obtiene el material biológico que se suministra en la piel, un plasma con una gran concentración de plaquetas que aumentan el factor regenerativo de la piel donde se aplica'
+                },
+                {
+                    title: 'Titulo 2',
+                    text: 'Es un tratamiento autológico ya que es del mismo paciente de donde se obtiene el material biológico que se suministra en la piel, un plasma con una gran concentración de plaquetas que aumentan el factor regenerativo de la piel donde se aplica'
+                },
+                {
+                    title: 'Titulo 3',
+                    text: 'Es un tratamiento autológico ya que es del mismo paciente de donde se obtiene el material biológico que se suministra en la piel, un plasma con una gran concentración de plaquetas que aumentan el factor regenerativo de la piel donde se aplica'
+                },
+                {
+                    title: 'Titulo 4',
+                    text: 'Es un tratamiento autológico ya que es del mismo paciente de donde se obtiene el material biológico que se suministra en la piel, un plasma con una gran concentración de plaquetas que aumentan el factor regenerativo de la piel donde se aplica'
+                },
+                {
+                    title: 'Titulo 5',
+                    text: 'Es un tratamiento autológico ya que es del mismo paciente de donde se obtiene el material biológico que se suministra en la piel, un plasma con una gran concentración de plaquetas que aumentan el factor regenerativo de la piel donde se aplica'
+                }
+            ],
+            items: [
+                {
+                    icon: 'check-circle',
+                    text: 'Reducción de lineas de expresión'
+                },
+                {
+                    icon: 'check-circle',
+                    text: 'Minimiza las marcas de acne',
+                },
+                {
+                    icon: 'check-circle',
+                    text: 'Desintoxicación de la piel',
+                },
+                {
+                    icon: 'check-circle',
+                    text: 'Disminución de estrías y cicatrices'
                 }
             ]
         }

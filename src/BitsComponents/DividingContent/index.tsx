@@ -10,7 +10,7 @@ type Props = {
 }
 
 const DividingContent = ({items}: Props) => <div>
-    {items.map((item) => <Col xs={18} sm={10} md={8}>
+    {items.map((item) => <Col xs={24} sm={8} md={8}>
       <IconContainer>
         <IconContainerLines>
           <Line />
