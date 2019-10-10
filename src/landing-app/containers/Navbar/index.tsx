@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import { useScroll } from '../Hooks/useScroll';
 import { NavbarContainer, ImageSidebar, ImageContainer, MNav, LogoImage, CTAButton, Menutext, MenuContainer } from './styledComponents';
-import { Icon, Drawer, Col } from 'antd';
+import { Icon, Drawer, Col, message } from 'antd';
 import { UserNavbar } from './Hooks/useNavbar';
 import { component } from 'react-garden-kit';
-import ModalCaller from '../../bitComponents/ModalCaller';
+import ModalCaller from '../../../BitsComponents/ModalCaller';
+import { UseCTA } from './Hooks/useCta';
+import { MakeUrlReservation } from './helpers';
+import Axios from 'axios';
 
 
 type Configuration = {
@@ -33,16 +36,25 @@ type Props = {
         Configuration: Configuration
 }
 
-const sendEmail = () => {
-        console.log('email sent')
+const sendEmail = async (values, setModalOpen, setLoading) => {
+        if (values !== 'Error') {
+                setLoading(true);
+                await Axios.get(MakeUrlReservation(values));
+                setLoading(false)
+                message.success('Reservación enviada, espera a que nos pongamos en contacto contigo.');
+                setModalOpen(false);
+        }
+        console.log('email sent', values)
 }
+
+// https://us-central1-mediplus-1838c.cloudfunctions.net/sendMail?dest=lozarnez@gmail.com &date=19/05/12&cellphone=6721096051&name=Luis Roberto Hernandez Robles&email=lu97is@gmail.com
 
 
 const Navbar = ({ Configuration }: Props) => {
     const { actionsConfiguration, logoConfiguration, menuConfiguration } = Configuration;
     const { YPosition } = useScroll();
     const { drawerOpen, setDrawerOpen } = UserNavbar();
-    const [ modalOpen, setModalOpen ] = useState(false);
+    const { loading, setLoading, modalOpen, setModalOpen} = UseCTA();
     return (<NavbarContainer YPosition={YPosition} type="flex" align="middle" >
             {/* Mobile navbar */}
             <Col xs={4} sm={4} md={0}>
@@ -78,9 +90,10 @@ const Navbar = ({ Configuration }: Props) => {
                 </div> 
         </Col>
         <ModalCaller 
+        loading={loading}
         modalOpen={modalOpen} 
         onCancel={() => setModalOpen(false)} 
-        onOk={() => sendEmail()} />
+        onOk={(values) => sendEmail(values, setModalOpen, setLoading)} />
     </NavbarContainer>)
 }
 

@@ -1,18 +1,18 @@
 import React from 'react'
 import { component } from 'react-garden-kit'
 import { PersonContainer, PersonImage, DataContainer, QuoteDefinition, TestimonialText, Name, Direction, TextContainer, TestimonialContainerM } from '../styledComponents'
-import Quote from '../../../assets/Quote'
 
 type Props = {
     quote?: string,
     image: string | any,
+    QuoteImage: any,
     personInformation: {
         name: string,
         age: string,
     }
 }
 
-const ModalTestimonial = ({quote, image, personInformation}: Props) => <TestimonialContainerM>
+const ModalTestimonial = ({quote, image, personInformation, QuoteImage}: Props) => <TestimonialContainerM>
     <PersonContainer>
         <PersonImage src={image} />
         <DataContainer>
@@ -21,8 +21,8 @@ const ModalTestimonial = ({quote, image, personInformation}: Props) => <Testimon
         </DataContainer>
     </PersonContainer>
     <TextContainer>
-    <Quote fill={'#595959'} />
-    <Quote fill={'#595959'} />
+    <QuoteImage fill={'#595959'} />
+    <QuoteImage fill={'#595959'} />
     <QuoteDefinition>Best day ever</QuoteDefinition>
     <TestimonialText>{quote}</TestimonialText>
     </TextContainer>

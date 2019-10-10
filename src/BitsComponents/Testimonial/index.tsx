@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { TestimonialContainer, TestimonialCard, TestimonialText, PersonContainer, PersonImage, DataContainer, ShowMore, QuoteDefinition, Name, Direction } from './styledComponents';
-import Quote from '../../assets/Quote'
 import { Modal } from 'antd';
 import ModalTestimonial from './ModalTestimonial';
 
 type Props = {
     quote: string,
     image: string | any,
+    QuoteImage: any,
     personInformation: {
         name: string,
         age: string,
@@ -16,13 +16,13 @@ type Props = {
 
 const trunkText = (text: string) => `${text.substr(0, text.length - 10)}`
 
-const Testimonial = ({ quote, image, personInformation}:Props ) => {
+const Testimonial = ({ quote, image, personInformation, QuoteImage}:Props ) => {
     const [modalOpen, setModalOpen] = useState(false)
     return (
         <TestimonialContainer>
     <TestimonialCard>
-        <Quote fill={'#595959'} />
-        <Quote fill={'#595959'} />
+        <QuoteImage fill={'#595959'} />
+        <QuoteImage fill={'#595959'} />
         <QuoteDefinition>Best day ever</QuoteDefinition>
         <TestimonialText>{quote.length > 180 ? 
             <p>{trunkText(quote)} <ShowMore onClick={() => setModalOpen(true)}>ver mas...</ShowMore></p> : quote}
@@ -40,7 +40,7 @@ const Testimonial = ({ quote, image, personInformation}:Props ) => {
           onOk={() => setModalOpen(false)}
           onCancel={() => setModalOpen(false)}
     >
-        <ModalTestimonial quote={quote} personInformation={personInformation} image={image} />
+        <ModalTestimonial QuoteImage={QuoteImage} quote={quote} personInformation={personInformation} image={image} />
         </Modal>
 </TestimonialContainer>
     )

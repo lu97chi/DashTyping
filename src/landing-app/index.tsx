@@ -2,13 +2,7 @@ import React from 'react'
 import { useAppConfig, component } from 'react-garden-kit';
 import { AppParams } from './app.params';
 import { GetSelector } from './helpers';
-import waves from './assets/waves.svg';
-import PackageCard from './bitComponents/PackageCard';
-import { Row, Col } from 'antd';
-import TransitionCarrousel from './bitComponents/TransitionCarousel';
-import Testimonial from './bitComponents/Testimonial';
-import Navbar from './containers/Navbar';
-import DividingContent from './bitComponents/DividingContent';
+import { Row } from 'antd';
 
 const DividerItems = [
     {
