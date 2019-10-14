@@ -7,11 +7,15 @@ type Props = {
         text: string
     }>
 }
-const texts = ['12341234', '43214124','4321432151231']
 
-const handleClick = (setTransition, setActive, active) => {
+const handleClick = (setTransition, setActive, active, items) => {
     setTransition(true);
-    setActive(active + 1);
+    if (active === items.length - 1) {
+        setActive(0);
+    } else {
+        setActive(active + 1);
+
+    }
 }
 
 const TransitionCarrousel = ({ items }:Props) => {
@@ -24,11 +28,11 @@ const TransitionCarrousel = ({ items }:Props) => {
                 <CarouselTitle>{items[active].title}</CarouselTitle>
                 <CarouselText>{items[active].text}</CarouselText>
             </Carrousel>
-            <IconArrow type="right" onClick={() => handleClick(setOnTransition, setActive, active)} />
+            <IconArrow type="right" onClick={() => handleClick(setOnTransition, setActive, active, items)} />
         </CarrouselContainer>
         <SlideContainer>
             <SlideSelector>
-                {items.map((item, i) => <Dot onClick={() => handleClick(setOnTransition, setActive, i - 1)} active={i === active} />)}
+                {items.map((item, i) => <Dot onClick={() => handleClick(setOnTransition, setActive, i - 1, items)} active={i === active} />)}
             </SlideSelector>
         </SlideContainer>
         </>

@@ -1,12 +1,13 @@
 import React from 'react';
 import { Row, Col } from 'antd';
 import PackageCard from '../../../BitsComponents/PackageCard';
-import { Container } from './styledComponents';
+import { Container, Title } from './styledComponents';
 
 type Props = {
     configuration: {
         image: any,
         text: string,
+        title: string,
         items: Array<{
             top: boolean,
             mainTitle: string,
@@ -16,9 +17,9 @@ type Props = {
 }
 
 const Pricing = ({configuration}: Props) => {
-    const { items } = configuration;
+    const { items, title } = configuration;
     return (<Container>
-        Costos adecuados
+        <Title>{title}</Title>
         
         <Row type="flex" align="middle" justify="center">
             {items.map(({top, mainTitle, elements}) => <Col xs={20} lg={5}>

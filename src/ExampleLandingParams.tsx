@@ -196,6 +196,7 @@ const sections: Array<SectionType> = [
     {
         type: "pricing",
         configuration: {
+            title: "Costos adecuados",
             image: Man,
             text: 'Costos adecuados',
             items: Items
