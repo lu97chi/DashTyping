@@ -5,8 +5,67 @@ import LogoMD from './landing-app/assets/MediplasmaMD.png';
 import Leaf from './landing-app/assets/Lief';
 import Persons from './landing-app/assets/Persons';
 import Tooth from './landing-app/assets/Tooth';
+import Lady from './landing-app/assets/smile-Lady.jpg'
+import Man from './landing-app/assets/man.jpg'
+import Quote from './landing-app/assets/Quote';
+import Street from './landing-app/assets/Street';
+import Phone from './landing-app/assets/Phone';
+import Email from './landing-app/assets/Email';
+import Facebook from './landing-app/assets/Facebook';
+import Youtube from './landing-app/assets/Youtube';
+import Instagram from './landing-app/assets/Instagram';
+import Twitter from './landing-app/assets/Twitter';
+
 
 const functionA = (data) => console.log('func A', data);
+
+const Items = [
+    {
+        top: false,
+        mainTitle: 'Inicial',
+        elements: ['Anti - Age', 'Vitamina C', 'Peptide Gold']
+    },
+    {
+        top: true,
+        mainTitle: 'PROFESIONAL',
+        elements: ['Anti - Age', 'Vitamina C', 'Peptide Gold', 'BBGLOW']
+    },
+    {
+        top: false,
+        mainTitle: 'Genérico',
+        elements: ['Anti - Age', 'Vitamina C', 'Peptide Gold']
+    }
+]
+
+const testiomonials = [
+    {
+        personInformation: {
+            name: 'Natalia',
+            age: '32'
+        },
+        QuoteImage: Quote,
+        image: 'https://img.theculturetrip.com/768x432/wp-content/uploads/2017/09/7-reasons-to-date-a-serbian.jpg',
+        quote: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos minus doloremque neque optio laudantium aliquid. Delectus earum saepe, assumenda recusandae alias quisquam, doloremque similique itaque voluptatum ipsa nihil, quis minima?'
+    },
+    {
+        personInformation: {
+            name: 'Melissa',
+            age: '32'
+        },
+        QuoteImage: Quote,
+        image: 'https://russiansbrides.com/wp-content/uploads/2019/06/Serbian-Women-1-1.jpg',
+        quote: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos minus doloremque neque optio laudantium aliquid. Delectus earum saepe, assumenda recusandae alias quisquam, doloremque similique itaque voluptatum ipsa nihil, quis minima?'
+    },
+    {
+        personInformation: {
+            name: 'Karla',
+            age: '32'
+        },
+        QuoteImage: Quote,
+        image: 'https://imgix.ranker.com/user_node_img/50059/1001171784/original/amanda-lajcaj-photo-u1?w=650&q=50&fm=pjpg&fit=crop&crop=faces',
+        quote: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos minus doloremque neque optio laudantium aliquid. Delectus earum saepe, assumenda recusandae alias quisquam, doloremque similique itaque voluptatum ipsa nihil, quis minima?'
+    }
+]
 
 const sections: Array<SectionType> = [
     {
@@ -82,6 +141,14 @@ const sections: Array<SectionType> = [
         }
     },
     {
+        type: "dividingImage",
+        configuration: {
+            image:Lady,
+            text: 'Tratamientos de primer nivel',
+            textAlign: 'flex-end',
+        }
+    },
+    {
         type: "benefits",
         configuration: {
             carouselItems: [
@@ -124,6 +191,63 @@ const sections: Array<SectionType> = [
                     text: 'Disminución de estrías y cicatrices'
                 }
             ]
+        }
+    },
+    {
+        type: "pricing",
+        configuration: {
+            image: Man,
+            text: 'Costos adecuados',
+            items: Items
+        }
+    },
+    {
+        type: "reviews",
+        configuration: {
+            title: "Nuestros clientes opinan",
+            items: testiomonials
+        }
+    },
+    {
+        type: "contact",
+        configuration: {
+            contactUs: {
+                title: 'Acercate a nosotros',
+                socialIcons: [
+                    {
+                        icon: Youtube,
+                        link: 'y'
+                    },
+                    {
+                        icon: Facebook,
+                        link: '262823323833276'
+                    },
+                    {
+                        icon: Twitter,
+                        link: 'twitter'
+                    },
+                    {
+                        icon: Instagram,
+                        link: 'in'
+                    }
+                ],
+                inlineIcons: [
+                    {
+                        icon: Street,
+                        text: 'Francisco Villa #1840'
+                    },
+                    {
+                        icon: Phone,
+                        text: '+52667 7140244'
+                    },
+                    {
+                        icon: Email,
+                        text: 'cosmopilis@tucosmopolis.com'
+                    }
+                ]
+            },
+            logo: LogoMD,
+            inputLabel: 'Dános tu correo para obtener información especial'
         }
     }
 ];

@@ -13,6 +13,6 @@ export const Text = styled.span`
         font-size: 20px
     }
     @media (min-width: 1024) {
-        font-size: 22px
+        font-size: 24px
     }
 `;

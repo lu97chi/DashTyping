@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Carrousel, CarrouselContainer, CarouselText, CarouselTitle, IconArrow } from './styledComponents';
+import { Carrousel, CarrouselContainer, CarouselText, CarouselTitle, IconArrow, SlideSelector, SlideContainer, Dot } from './styledComponents';
 
 type Props = {
     items: Array<{
@@ -26,7 +26,11 @@ const TransitionCarrousel = ({ items }:Props) => {
             </Carrousel>
             <IconArrow type="right" onClick={() => handleClick(setOnTransition, setActive, active)} />
         </CarrouselContainer>
-        <div>s</div>
+        <SlideContainer>
+            <SlideSelector>
+                {items.map((item, i) => <Dot onClick={() => handleClick(setOnTransition, setActive, i - 1)} active={i === active} />)}
+            </SlideSelector>
+        </SlideContainer>
         </>
     )
 };

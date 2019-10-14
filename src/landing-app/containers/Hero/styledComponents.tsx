@@ -23,7 +23,7 @@ export const HeroSecondaryText = styled.p`
 `;
 
 export const HeroContainer = styled.div`
-    margin-top: 98px;
+    margin-top: 90px;
     background: pink;
     z-index: 1;
     display: flex;

@@ -22,7 +22,7 @@ const Benefits = ({configuration}:Props) => <Row style={{padding: '18px'}}>
             <Benefit icon={icon} text={text} />
         </Col>)}
     </Col>
-    <Col md={12} xs={24} style={{background: 'red'}}>
+    <Col md={12} xs={24}>
         <TransitionCarrousel items={configuration.carouselItems} />
     </Col>
 </Row>;

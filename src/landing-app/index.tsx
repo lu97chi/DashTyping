@@ -73,7 +73,7 @@ const Landing = () => {
     console.log(sections, theme);
     return <Row>
         {
-            sections.map((section) => GetSelector(section))
+            sections.map((section) => <div style={{marginTop: '14px'}}>{GetSelector(section)}</div>)
         } 
     </Row>
     // <div>
