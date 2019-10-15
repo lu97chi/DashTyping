@@ -6,6 +6,7 @@ import ModalTestimonial from './ModalTestimonial';
 type Props = {
     quote: string,
     image: string | any,
+    quoteDefinition: string,
     QuoteImage: any,
     personInformation: {
         name: string,
@@ -16,14 +17,14 @@ type Props = {
 
 const trunkText = (text: string) => `${text.substr(0, text.length - 10)}`
 
-const Testimonial = ({ quote, image, personInformation, QuoteImage}:Props ) => {
+const Testimonial = ({ quote, image, personInformation, QuoteImage, quoteDefinition}:Props ) => {
     const [modalOpen, setModalOpen] = useState(false)
     return (
         <TestimonialContainer>
     <TestimonialCard>
         <QuoteImage fill={'#595959'} />
         <QuoteImage fill={'#595959'} />
-        <QuoteDefinition>Best day ever</QuoteDefinition>
+        <QuoteDefinition>{quoteDefinition}</QuoteDefinition>
         <TestimonialText>{quote.length > 180 ? 
             <p>{trunkText(quote)} <ShowMore onClick={() => setModalOpen(true)}>ver mas...</ShowMore></p> : quote}
         </TestimonialText>

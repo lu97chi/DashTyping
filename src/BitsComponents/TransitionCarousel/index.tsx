@@ -1,24 +1,41 @@
 import React, { useState } from 'react'
-import { Carrousel } from './styledComponents';
-import { Button } from 'antd';
+import { Carrousel, CarrouselContainer, CarouselText, CarouselTitle, IconArrow, SlideSelector, SlideContainer, Dot } from './styledComponents';
 
-const texts = ['12341234', '43214124','4321432151231']
-
-const handleClick = (setTransition, setActive, active) => {
-    setTransition(true);
-    setActive(active + 1);
+type Props = {
+    items: Array<{
+        title: string,
+        text: string
+    }>
 }
 
-const TransitionCarrousel = () => {
+const handleClick = (setTransition, setActive, active, items) => {
+    setTransition(true);
+    if (active === items.length - 1) {
+        setActive(0);
+    } else {
+        setActive(active + 1);
+
+    }
+}
+
+const TransitionCarrousel = ({ items }:Props) => {
     const [ onTransition, setOnTransition ] = useState(false);
     const [ active, setActive ] = useState(0);
     return (
-        <div style={{marginLeft: '250px'}}>
+        <>
+        <CarrouselContainer>
             <Carrousel animation={onTransition} onAnimationEnd={() => setOnTransition(false)}>
-                {texts[active]}
+                <CarouselTitle>{items[active].title}</CarouselTitle>
+                <CarouselText>{items[active].text}</CarouselText>
             </Carrousel>
-            <Button onClick={() => handleClick(setOnTransition, setActive, active)}>Cicl</Button>
-        </div>
+            <IconArrow type="right" onClick={() => handleClick(setOnTransition, setActive, active, items)} />
+        </CarrouselContainer>
+        <SlideContainer>
+            <SlideSelector>
+                {items.map((item, i) => <Dot onClick={() => handleClick(setOnTransition, setActive, i - 1, items)} active={i === active} />)}
+            </SlideSelector>
+        </SlideContainer>
+        </>
     )
 };
 

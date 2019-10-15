@@ -5,6 +5,7 @@ export const TestimonialContainer = styled.div`
     flex-direction: column;
     width: 100%;
     transition: .3s ease all;
+    margin: 16px 0;
     &:hover{
         transform: translateY(-5px);    
     }

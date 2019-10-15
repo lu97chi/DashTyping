@@ -6,7 +6,7 @@ type ContainerBase = {
 
 export const CardContainer = styled.div<ContainerBase>`
     width: 100%;
-height: ${({top}) => top ? '477px' : '358px'};
+height: ${({top}) => top ? '457px' : '338px'};
 position: relative;
 padding: 8px;
 `;
@@ -36,7 +36,10 @@ export const SpecialContainer = styled.div`
 `;
 
 export const MainTitle = styled.h3`
-    font-size: 44px;
+    font-size: 32px;
+    @media (min-width: 1024px){
+        font-size: 28px;
+    }
     color: #FFFFFF;
     text-align: center;
 `;
@@ -47,12 +50,12 @@ export const CheckContainer = styled.div`
     justify-content: flex-start;
 `;
 
-export const CheckText = styled.div`
+export const CheckText = styled.span`
     font-size: 18px;
 `;
 
 export const ElementsContainer = styled.div`
     display: flex;
     flex-direction: column;
-    padding-left: 30%;
+    align-items: center;
 `;
