@@ -5,11 +5,15 @@ import 'rc-texty/assets/index.css';
 import { Row } from 'antd';
 
 type ContainerBase = {
-    YPosition: number
+    YPosition: number,
+}
+
+type MenuContainer = {
+    onClick: any
 }
 
 export const NavbarContainer = styled(Row)<ContainerBase>`
-    background: ${({YPosition}) => YPosition > 35 ? '#FFD0D0' :'#ffffff'};
+    background: ${({YPosition}) => YPosition > 35 ? '#f0f0f0' :'#ffffff'};
     height: ${({YPosition}) => YPosition < 40 ? '98px' : '90px'};
     transition: .3s ease all;
     position: fixed;
@@ -20,6 +24,7 @@ export const NavbarContainer = styled(Row)<ContainerBase>`
     color: #FFFFFF;
     top: 0;
     z-index: 10;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 `;
 
 export const ItemMenu = styled.span`
@@ -82,9 +87,15 @@ export const CTAButton = styled.button`
     }
 `;
 
-export const Menutext = styled(Texty)`
+export const Menutext = styled(Texty)<MenuContainer>`
     color: #595959;
     margin: 0 12px;
+    cursor: pointer;
+    font-size:16px;
+    transition: .3s ease all;
+    &:hover{
+        color: red;
+    }
 `;
 
 export const MenuContainer = styled.div`

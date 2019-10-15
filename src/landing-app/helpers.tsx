@@ -8,14 +8,17 @@ import DividingImage from './containers/DividingImage';
 import Pricing from './containers/Pricing';
 import Testimonials from './containers/Testimonials';
 import Contact from './containers/Contact';
-export const GetSelector = (selector: SectionType) => {
+
+
+
+export const GetSelector = (selector: SectionType, handler:Function) => {
     const {
         type,
         configuration
     } = selector;
     switch (type) {
         case 'navbar':
-            return <Navbar Configuration={configuration}  />;
+            return <Navbar menuHandler={(element) => handler(element)} Configuration={configuration}  />;
         case 'hero':
             return <Hero configuration={configuration} />;
         case 'dividingContent':

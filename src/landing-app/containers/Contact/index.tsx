@@ -21,6 +21,14 @@ type Props = {
     }
 }
 
+const handleClick = (icon) => {
+    setTimeout(() => {
+        window.location.href = 'https://twitter.com/lu97chi/'
+    }, 25);
+    window.location.href = 'twitter://user?id=740296310'
+}
+// 
+
 const Contact = ({configuration}:Props) => {
     const { contactUs, logo, inputLabel } = configuration;
     const { socialIcons } = contactUs;
@@ -44,10 +52,11 @@ const Contact = ({configuration}:Props) => {
             <JoinUsText>{contactUs.title}</JoinUsText>
             {contactUs.inlineIcons.map(({text, icon}) => <InlineIconText icon={icon} text={text} />)}
             <SocialMediaContainer>
-                {socialIcons.map((icon) => <Icon style={{marginLeft: '16px'}} component={icon.icon} />)}
+                {socialIcons.map((icon) => <Icon onClick={() => handleClick(icon.icon)} style={{marginLeft: '16px'}} component={icon.icon} />)}
             </SocialMediaContainer>
         </Col>
     </Row>
+    {/* <a href="twitter://user?id=740296310"><Icon style={{marginLeft: '16px'}} component={icon.icon} /></a> */}
     {/* <Button>
         <a href="//api.whatsapp.com/send?phone=526721096051&text=hello">whatsapp</a>
     </Button>

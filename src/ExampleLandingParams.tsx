@@ -72,7 +72,11 @@ const sections: Array<SectionType> = [
         type: "navbar",
         configuration: {
            menuConfiguration: {
-               menu: ['Beneficios', 'Costos', 'Testimonio','Contacto'],
+               menu: [
+                    { label: 'Beneficios', section: 'benefits' },
+                    { label: 'Costos', section: 'dividingImage' }, 
+                    { label: 'Testimonio', section: 'reviews' },
+                    { label: 'Contacto', section: 'contact' }],
                menuPosition: 0,
            },
            logoConfiguration: {
@@ -127,11 +131,11 @@ const sections: Array<SectionType> = [
             items: [
                 {
                     text: 'Servicios dentales y tratamientos de la piel',
-                    icon: Leaf
+                    icon: Tooth
                 },
                 {
                     text: 'Equipo y personal ampliamente capacitado',
-                    icon: Leaf
+                    icon: Persons
                 },
                 {
                     text: 'Productos completamente naturales',
